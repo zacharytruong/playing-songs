@@ -5,7 +5,8 @@ import {
   FormErrorMessage,
   FormHelperText,
   FormLabel,
-  Input
+  Input,
+  Stack
 } from '@chakra-ui/react';
 import { SetStateAction, useState } from 'react';
 
@@ -21,10 +22,20 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <Stack
+      minHeight="80vh"
+      alignItems="center"
+      justifyContent="center"
+      padding="20px"
+    >
       <FormControl isInvalid={isError}>
         <FormLabel>Continue or create a new session</FormLabel>
-        <Input type="number" value={input} onChange={handleInputChange} />
+        <Input
+          type="number"
+          value={input}
+          onChange={handleInputChange}
+          size="lg"
+        />
         {!isError ? (
           <FormHelperText>
             Enter a session ID to continue, or if no session exists with that
@@ -36,6 +47,6 @@ export default function Home() {
           </FormErrorMessage>
         )}
       </FormControl>
-    </main>
+    </Stack>
   );
 }

@@ -10,17 +10,7 @@ const Hydrate = ({ children }: { children: ReactNode }) => {
     setIsHydrated(true);
   }, []);
 
-  return (
-    <>
-      {isHydrated ? (
-        children
-      ) : (
-        <div className="flex min-h-screen flex-col items-center justify-between p-24">
-          <Spinner />
-        </div>
-      )}
-    </>
-  );
+  return <>{isHydrated ? children : <Spinner />}</>;
 };
 
 export default Hydrate;
