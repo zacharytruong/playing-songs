@@ -9,7 +9,7 @@ const moduleRules = {
     {
       patterns: [
         {
-          group: ['*/_components/*', '*../*'],
+          group: ['*../*'],
           message: 'Please import core modules from the ~/* path alias.'
         }
       ]
