@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  Button,
   FormControl,
   FormErrorMessage,
   FormHelperText,
@@ -22,14 +23,10 @@ export default function Home() {
   };
 
   return (
-    <Stack
-      minHeight="80vh"
-      alignItems="center"
-      justifyContent="center"
-      padding="20px"
-    >
+    <Stack>
+      <h1>H1 Heading</h1>
       <FormControl isInvalid={isError}>
-        <FormLabel>Continue or create a new session</FormLabel>
+        <FormLabel fontWeight={300}>Continue or create a new session</FormLabel>
         <Input
           type="number"
           value={input}
@@ -46,6 +43,12 @@ export default function Home() {
             A session ID is required. It will be creaetd if not exist.
           </FormErrorMessage>
         )}
+        <Button size="md" variant="outline">
+          Start Medium !
+        </Button>
+        <Button size="sm" variant="solid">
+          Start Small !
+        </Button>
       </FormControl>
     </Stack>
   );

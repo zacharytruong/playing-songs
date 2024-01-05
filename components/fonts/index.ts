@@ -1,4 +1,3 @@
-// app/fonts.ts
 import { Inter, Montserrat } from 'next/font/google';
 
 const montserrat = Montserrat({
