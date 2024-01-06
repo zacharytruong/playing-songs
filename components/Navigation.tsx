@@ -1,11 +1,9 @@
 'use client';
 
-import { Link, Stack, useColorMode } from '@chakra-ui/react';
+import { Link, Stack } from '@chakra-ui/react';
 import React from 'react';
 
 const Navigation = () => {
-  const { toggleColorMode } = useColorMode();
-
   const items = [
     {
       name: 'Home',
@@ -20,20 +18,15 @@ const Navigation = () => {
       url: '/playing'
     },
     {
-      name: 'Mode',
-      url: undefined,
-      action: true
+      name: 'Sign In',
+      url: '/signin'
     }
   ];
 
   return (
     <Stack direction="row" spacing="24px">
       {items.map((item, index) => (
-        <Link
-          key={index}
-          href={item.url}
-          onClick={item.action ? toggleColorMode : undefined}
-        >
+        <Link key={index} href={item.url}>
           {item.name}
         </Link>
       ))}
