@@ -9,18 +9,10 @@ import {
   Input,
   Stack
 } from '@chakra-ui/react';
-import { SetStateAction, useState } from 'react';
+import { useState } from 'react';
 
 export default function Home() {
-  const [input, setInput] = useState('');
-  const [isError, setIsError] = useState(false);
-
-  const handleInputChange = (e: {
-    target: { value: SetStateAction<string> };
-  }) => {
-    setInput(e.target.value);
-    e.target.value === '' ? setIsError(true) : setIsError(false);
-  };
+  const [isError] = useState(false);
 
   return (
     <Stack>
@@ -29,9 +21,10 @@ export default function Home() {
         <FormLabel fontWeight={300}>Continue or create a new session</FormLabel>
         <Input
           type="number"
-          value={input}
-          onChange={handleInputChange}
+          // value={input}
+          // onChange={handleInputChange}
           size="lg"
+          focusBorderColor="brand.200"
         />
         {!isError ? (
           <FormHelperText>
@@ -44,10 +37,13 @@ export default function Home() {
           </FormErrorMessage>
         )}
         <Button size="md" variant="outline">
-          Start Medium !
+          Outline Medium !
+        </Button>
+        <Button size="lg" variant="outline">
+          Outline lg !
         </Button>
         <Button size="sm" variant="solid">
-          Start Small !
+          Solid Small !
         </Button>
       </FormControl>
     </Stack>
